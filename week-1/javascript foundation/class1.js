@@ -70,3 +70,39 @@ obj.fun1 = function(){
     console.log(`Hello ${this.name}`);
 }
 obj.fun1();
+console.log(obj.hasOwnProperty("name"));
+
+
+console.log(addTwo(5));
+function addTwo(arg)
+{
+    return arg + 2;
+}
+
+// console.log(addThree(5))         //Error variable hoisting
+const addThree = function addThree(arg1)
+{
+    return arg1 + 3;
+}
+
+function temp()
+{
+    // console.log(this);    //Global object
+}
+temp();
+
+const temp1 = ()=>{
+    console.log(this);
+}
+temp1();
+
+Array.from("Hello").forEach((element, index, array) => {
+    console.log(element + "  " + index + "  "+array)
+});
+
+const arr3 = [5, 6, 7, 8, 10, 45, 90];
+const newArr3 = arr3.map((element)=>element*10);
+const new1Arr3 = arr3.filter((element)=>element>=20);
+let initialValue = 1;
+const newValue = arr3.reduce((accumulator, currValue)=>accumulator * currValue, initialValue);
+console.log(newValue);
