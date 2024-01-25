@@ -49,7 +49,24 @@ console.log("1"+2+2);  //122
 console.log(1+2+"3");  //33
 
 let arr1 = [4, 5, 6, 7, 8, 9, 78];
-console.log(arr1.slice(2, 5));
+console.log(arr1.slice(2, 5));      //doesn't make changes to original array
 console.log(arr1);
-console.log(arr1.splice(2, 5));
+console.log(arr1.splice(2, 5));     //make changes to original array, end iterator is inclusive
 console.log(arr1);
+
+let arr2 = Array.from("hello");
+console.log(arr2);
+
+//object
+let sym = Symbol("skipper");
+let obj = {
+    name:"abinash",
+    group:"A",
+    [sym]:"wake"
+}
+console.log(typeof obj[sym]);
+// Object.freeze(obj);
+obj.fun1 = function(){
+    console.log(`Hello ${this.name}`);
+}
+obj.fun1();
