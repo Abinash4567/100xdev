@@ -7,7 +7,7 @@ console.log(firstName+" "+secondName);
 //Array
 let arr = [1, 2, 3, 3, 45, 90, 2];
 let largest = arr[0];
-for(let i=0; i<arr.length; i++)
+for(let i=1; i<arr.length; i++)
     {
         if(arr[i] > largest)
             largest = arr[i];
@@ -32,8 +32,24 @@ for(let i=0; i<objectArray.length; i++)
         console.log(objectArray[i]["firstName"]);
 }
 
-
+// takes up whole 100% usage in single core
 let sum = 0;
-for(let i=1; i<1000000000000; i++)
-    sum+=i;
-console.log(sum);
+// for(let i=1; i<100000000000; i++)
+    // sum+=i;
+// console.log(sum);
+
+// NULL vs UNDEFINED
+let a = null;       //null is object ==0
+console.log(a);    //null assigned by user
+
+let b;              //typeof undefined is undefined
+console.log(b);    //not initialized then undefined
+
+console.log("1"+2+2);  //122
+console.log(1+2+"3");  //33
+
+let arr1 = [4, 5, 6, 7, 8, 9, 78];
+console.log(arr1.slice(2, 5));
+console.log(arr1);
+console.log(arr1.splice(2, 5));
+console.log(arr1);
