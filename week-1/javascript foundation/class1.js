@@ -79,7 +79,7 @@ function addTwo(arg)
     return arg + 2;
 }
 
-// console.log(addThree(5))         //Error variable hoisting
+// console.log(addThree(5))         //Error variable hoisting:moving all declarations to the top of the current scope
 const addThree = function addThree(arg1)
 {
     return arg1 + 3;
@@ -101,8 +101,17 @@ Array.from("Hello").forEach((element, index, array) => {
 });
 
 const arr3 = [5, 6, 7, 8, 10, 45, 90];
+let [var1, var2, ...var3] = arr3;      //Array Destructing
+console.log(var1+" "+var2+" "+var3);
 const newArr3 = arr3.map((element)=>element*10);
 const new1Arr3 = arr3.filter((element)=>element>=20);
 let initialValue = 1;
 const newValue = arr3.reduce((accumulator, currValue)=>accumulator * currValue, initialValue);
 console.log(newValue);
+
+const newObj = {...arr3};
+console.log(newObj);
+arr3.sort((a, b)=>b-a);
+console.log(arr3);
+
+// splice(starting index, number of element to be deleted, {array to be added});
