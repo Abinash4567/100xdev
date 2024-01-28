@@ -1,0 +1,9 @@
+document.getElementbyId('#id').addEventListener('click', (event)=>{
+    console.log(`Event Bubbling`);
+}, false);
+
+document.getElementbyId('#id').addEventListener('click', (event)=>{
+    console.log(`Event Propagation`);
+}, true);
+
+event.stopPropagation()  --> stop Propagation

@@ -1,0 +1,27 @@
+document.getElementbyId('title').getAttribute('id');
+document.getElementbyId('title').getAttribute('class');
+
+document.getElementbyId('title').setAttribute('class', 'mainHeading', 'subHeading');
+
+const title = document.getElementbyId('title');
+title.style.padding = '126px';
+
+innerText --> only visible text
+textContent --> all text including hidden
+innerHtml --> includes tags
+outerHTML -->including tag
+
+document.querySelector('.class' / '#id');
+HTML collection --> Array via Array.from();
+
+firstElementChild, last
+:nth-child(4)
+parentElement
+appendChild
+nextElementSibling
+childNodes  --> all inner nodes
+
+document.createElement('div')
+createTextNode("text");
+replaceWith(node);
+remove()
