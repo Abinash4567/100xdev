@@ -33,7 +33,7 @@ for(let i=0; i<objectArray.length; i++)
 }
 
 // takes up whole 100% usage in single core
-let sum = 0;
+// let sum = 0;
 // for(let i=1; i<100000000000; i++)
     // sum+=i;
 // console.log(sum);
