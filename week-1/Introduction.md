@@ -1,4 +1,4 @@
-Javascript is multi-paradigm language.It supports following programming paradigm:
+### Javascript is multi-paradigm language. It supports following programming paradigm:
 1. Object-oriented programming
     classes, objects, inheritance, encapsulation through use of prototype
 2. Functional programming
