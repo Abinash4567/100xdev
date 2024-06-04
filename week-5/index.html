@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="container"></div>
+
+    <script>
+
+        //state
+        let state = { 
+            count: 0 
+        }
+
+        function increaseCount() {
+            state.count++;
+            componentRender();
+        }
+
+        //rendering
+        function componentRender()
+        {
+            const container = document.getElementById('container');
+            container.innerHTML = '';
+            container.appendChild(timerComponent());
+        }
+
+        //component
+        function timerComponent() {
+            const button = document.createElement('button');
+            button.setAttribute('onClick', 'increaseCount()');
+            button.innerHTML = `${state.count}`;
+            return button;
+        }
+        componentRender();
+
+    </script>
+</body>
+</html>
+
+</html>
