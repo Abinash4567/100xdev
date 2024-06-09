@@ -6,6 +6,8 @@ function App() {
     <>
       <CustomComponent/>
       <FetchingComponent />
+      {/* <AutoRefreshing/> */}
+      <Debouncing />
     </>
   )
 }
@@ -72,4 +74,89 @@ function FetchingComponent() {
   ) : (
     datas.data.map((indi) => <div key={indi.id} style={{backgroundColor: "skyblue", fontSize: 12}}>{indi.title}</div>)
   );
+}
+
+
+function useTodos(n)
+{
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState([]);
+
+  async function getdata()
+  {
+    const response = await fetch("https://sum-server.100xdevs.com/todos");
+    const res = await response.json();
+    setData(res.todos);
+    setLoading(false);
+  }
+
+  useEffect(()=>
+    {
+    let timer = setInterval(()=>{
+      getdata();
+    }, n * 1000);
+
+    getdata();
+
+    return ()=>{
+      clearInterval(timer);
+    }
+    
+  })
+  
+  return {
+      todos: data,
+      loading: loading
+    }
+}
+
+function AutoRefreshing()
+{
+  const { todos, loading } = useTodos(7);
+
+  if (loading) {
+    return <div>
+      Loading...
+    </div>
+  }
+
+  return (
+    <>
+      {todos.map(todo => <Track todo={todo} key={todo.id}/>)}
+    </>)
+}
+
+function Track({ todo }) {
+  return <div>
+    {todo.title}
+    <br />
+    {todo.description}
+  </div>
+}
+
+function useDebounce(n, string){
+  const [debouncedValue, setDebouncedValue] = useState(string);
+
+  useEffect(()=>
+  {
+    let timer = setTimeout(()=>{
+      setDebouncedValue(string);
+    }, n * 1000);
+
+    return () => clearTimeout(timer)
+  }, [string, n]);
+
+  return debouncedValue;
+}
+
+
+function Debouncing(){
+  const [data, setData] = useState("");
+  const debouncedData = useDebounce(1, data);
+  return (
+    <div>
+      <input type='text' placeholder='type very fast' onChange={(event)=>setData(event.target.value)} />
+      <h3>{debouncedData}</h3>
+    </div>
+  )
 }
