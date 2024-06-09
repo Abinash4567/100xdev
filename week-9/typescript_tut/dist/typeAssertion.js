@@ -10,4 +10,3 @@ function getObj(key) {
     return abc[key];
 }
 // console.log(getObj("name"));
-// console.log(`Hlelo`);
