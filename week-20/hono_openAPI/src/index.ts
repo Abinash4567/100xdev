@@ -2,7 +2,6 @@ import { createRoute } from '@hono/zod-openapi'
 import { OpenAPIHono } from '@hono/zod-openapi'
 import { ParamsSchema } from './input'
 import { UserSchema } from './output'
-import { Hono } from 'hono'
 import { swaggerUI } from '@hono/swagger-ui'
 
 const app = new OpenAPIHono()
@@ -34,7 +33,6 @@ app.openapi(route, (c) => {
   })
 })
 
-// The OpenAPI documentation will be available at /doc
 app.doc('/doc', {
   openapi: '3.0.0',
   info: {
