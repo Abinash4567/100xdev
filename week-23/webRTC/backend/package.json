@@ -1,6 +1,7 @@
 {
-  "name": "backend",
+  "name": "week-23-webrtc",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -8,9 +9,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "@types/ws": "^8.5.11",
-    "ws": "^8.18.0"
+    "@types/ws": "^8.5.10",
+    "ws": "^8.17.0"
   }
 }
